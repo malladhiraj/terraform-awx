@@ -5,8 +5,8 @@ terraform {
       version = "6.2.0"
     }
 
-    aap = {
-      source = "ansible/aap"
+    awx = {
+      source = "denouche/awx"
     }
   }
   backend "s3" {}
