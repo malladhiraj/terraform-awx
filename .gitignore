@@ -1,0 +1,5 @@
+execution-environment/context
+.terraform
+.terraform.*
+.DS_Store
+.env
