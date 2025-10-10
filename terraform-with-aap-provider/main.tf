@@ -39,7 +39,7 @@ resource "aws_instance" "tf-demo-aws-ec2-instance-2" {
 
 provider "awx" {
   endpoint     = "https://control"
-  token        = ""
+  token        = "cn3cpNLmLSe7AyoDUwxJVQTzV4MVem"
   platform     ="awx"
   insecure     = true
   
