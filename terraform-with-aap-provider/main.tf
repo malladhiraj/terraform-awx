@@ -37,11 +37,16 @@ resource "aws_instance" "tf-demo-aws-ec2-instance-2" {
   }
 }
 
-provider "aap" {
-  host     = "https://control"
-  username = "admin"
-  password = "ansible123!"
-  insecure_skip_verify = true
+provider "awx" {
+  endpoint     = "https://control"
+  token        = ""
+  platform     ="awx"
+  insecure     = true
+  
+  api_retry = {
+    api_retry_count   = 3
+    api_retry_delay_seconds = 2
+  }
 }
 
 resource "aap_host" "tf-demo-aws-ec2-instance-2" {
