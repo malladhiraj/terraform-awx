@@ -34,11 +34,7 @@ provider "awx" {
   token        = "cn3cpNLmLSe7AyoDUwxJVQTzV4MVem"
   platform     ="awx"
   insecure     = true
-  
-  api_retry = {
-    api_retry_count   = 3
-    api_retry_delay_seconds = 2
-  }
+
 }
 
 resource "awx_host" "tf-demo-aws-ec2-instance-2" {
