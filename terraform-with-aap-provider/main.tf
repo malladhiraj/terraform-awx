@@ -37,7 +37,7 @@ resource "aws_instance" "tf-demo-aws-ec2-instance-2" {
   }
 }
 
-provider "awx" {
+provider "app" {
   host     = "http://192.168.2.218:10445"
   token        = "cn3cpNLmLSe7AyoDUwxJVQTzV4MVem"
   insecure     = true
