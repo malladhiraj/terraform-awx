@@ -24,5 +24,12 @@ resource "aws_instance" "tf-demo-aws-ec2-instance-1" {
   tags = {
     Name = "tf-demo-aws-ec2-instance-1"
   }
+}
 
+resource "aws_instance" "tf-demo-aws-ec2-instance-11" {
+  ami           = "ami-0005e0cfe09cc9050"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "tf-demo-aws-ec2-instance-11"
+  }
 }
