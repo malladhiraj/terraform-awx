@@ -5,8 +5,8 @@ terraform {
       version = "6.2.0"
     }
 
-    awx = {
-      source = "denouche/awx"
+    aap = {
+      source = "ansible/aap"
     }
   }
   backend "s3" {}
@@ -39,11 +39,12 @@ resource "aws_instance" "tf-demo-aws-ec2-instance-2" {
 
 provider "app" {
   host     = "http://192.168.2.218:10445"
-  token        = "cn3cpNLmLSe7AyoDUwxJVQTzV4MVem"
-  insecure     = true
+  username = "kali"
+  password = "kali"
+  insecure_skip_verify     = true
 }
 
-resource "awx_host" "tf-demo-aws-ec2-instance-2" {
+resource "aap_host" "tf-demo-aws-ec2-instance-2" {
   inventory_id = 2
   name = "aws_instance_tf-demo-aws-ec2-instance-2"
   description = "An EC2 instance created by Terraform"
