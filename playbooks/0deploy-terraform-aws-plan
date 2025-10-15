@@ -1,7 +1,12 @@
-resource "aws_instance" "tf-demo-aws-ec2-instance-1" {
-  ami           = "ami-0005e0cfe09cc9050"
-  instance_type = "t2.micro"
-  tags = {
-    Name = "tf-demo-aws-ec2-instance-1"
-  }
-}
+---
+- name: Deploy resources via Terraform
+  hosts: localhost
+  tasks:
+    - name: Terraform plan
+      cloud.terraform.terraform:
+        project_path: ../terraform/
+        state: present
+        force_init: true
+        backend_config_files:
+          - "{{ lookup('ansible.builtin.env', 'TF_BACKEND_CONFIG_FILE') }}" # Note use of the env variable set by the Terraform backend credential to store the backend configuration file path
+#
